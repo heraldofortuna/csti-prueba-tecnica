@@ -15,7 +15,6 @@ export default defineComponent({
         virtualBalance.value = retrievedVirtualBalance;
 
         const navigateToRecharges = () => {
-            console.log("navigateToRecharges!!!");
             router.push("/recharges");
         };
 

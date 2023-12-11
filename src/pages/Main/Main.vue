@@ -1,7 +1,6 @@
 <script src="./Main.ts" />
 
 <template>
-    <h1>Recargas y pagos</h1>
     <div>
         <p>Saldo virtual</p>
         <p>S/ {{ virtualBalance }}</p>

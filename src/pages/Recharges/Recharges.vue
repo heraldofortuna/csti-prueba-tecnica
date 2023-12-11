@@ -1,5 +1,6 @@
+<script src="./Recharges.ts" />
+
 <template>
-    <h1>Recargas</h1>
     <div>
         <p>Buscar empresa</p>
         <div>Ej. Culqi</div>
@@ -10,12 +11,11 @@
         <span>Telefonía</span>
     </div>
     <ul>
-        <li>Bitel</li>
-        <li>Claro</li>
-        <li>Directv</li>
-        <li>Entel</li>
-        <li>Netflix</li>
-        <li>Paysafecard</li>
-        <li>Flash mobile</li>
+        <li v-for="(provider, index) in providers">
+            <v-avatar size="40" tile>
+                <img :src="provider?.image" :alt="provider?.company" />
+            </v-avatar>
+            {{ provider?.company }}
+        </li>
     </ul>
 </template>
