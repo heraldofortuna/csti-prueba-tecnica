@@ -1,8 +1,4 @@
-<script>
-export default {
-    name: "Error",
-};
-</script>
+<script src="./Error.ts" />
 
 <template>
     <div class="errorPage">
