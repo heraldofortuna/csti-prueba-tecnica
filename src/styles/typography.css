@@ -1,0 +1,25 @@
+p,
+span {
+    color: var(--black-color);
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 26px;
+}
+
+.small_text {
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.medium_text {
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 30px;
+}
+
+.big_text {
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 40px;
+}

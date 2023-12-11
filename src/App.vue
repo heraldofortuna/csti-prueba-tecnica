@@ -1,11 +1,15 @@
-<script setup lang="ts">
-// import Main from "./pages/Main/Main.vue";
-</script>
+<script setup lang="ts"></script>
 
 <template>
-    <Suspense>
-        <router-view></router-view>
-    </Suspense>
+    <div class="app">
+        <div class="container">
+            <Suspense>
+                <router-view></router-view>
+            </Suspense>
+        </div>
+    </div>
 </template>
 
-<style></style>
+<style>
+@import "./style.css";
+</style>
