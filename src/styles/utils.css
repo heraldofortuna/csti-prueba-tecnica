@@ -1,0 +1,43 @@
+.button {
+    background-color: var(--red-color);
+    color: var(--white-color);
+    font-size: 20px;
+    padding: 16px 32px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.button:hover {
+    opacity: 0.7;
+}
+
+.backButton {
+    width: fit-content;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.backButton:hover {
+    opacity: 0.7;
+}
+
+.inputfield {
+    background-color: var(--gray1-color);
+    color: var(--black-color);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 16px 16px;
+    border-radius: 4px;
+}
+
+.inputfield:focus,
+.inputfield:focus-visible {
+    outline: none;
+}
+
+.inputfield::placeholder {
+    color: var(--gray2-color);
+}

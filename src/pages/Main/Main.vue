@@ -4,10 +4,18 @@
     <div class="main">
         <div class="main__header">
             <div class="main__header__virtualBalance__label">
-                <p>Saldo virtual</p>
+                <p class="small_text">Saldo virtual</p>
             </div>
             <div class="main__header__virtualBalance__value">
-                <p class="big_text">S/ {{ virtualBalance }}</p>
+                <p class="big_text">
+                    S/
+                    <template v-if="status === 'loading'">
+                        <span>Loading</span>
+                    </template>
+                    <template v-else>
+                        {{ virtualBalance }}
+                    </template>
+                </p>
             </div>
             <div class="main__header__question">
                 <span>¿Cómo cargar mi saldo virtual?</span>
@@ -17,10 +25,12 @@
             </p>
         </div>
         <div class="main__list">
-            <div class="main__list__element" @click="navigateToRecharges">
-                <div class="main__list__element__icon"></div>
-                <span class="medium_text">Recargas</span>
-            </div>
+            <router-link to="/recharges">
+                <div class="main__list__element">
+                    <div class="main__list__element__icon"></div>
+                    <span class="medium_text">Recargas</span>
+                </div>
+            </router-link>
             <div class="main__list__element">
                 <div class="main__list__element__icon"></div>
                 <span class="medium_text">Pago de servicios</span>

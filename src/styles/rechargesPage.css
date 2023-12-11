@@ -11,26 +11,6 @@
     gap: 4px;
 }
 
-.inputfield {
-    background-color: var(--gray1-color);
-    color: var(--black-color);
-    font-size: 18px;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 16px 16px;
-    border-radius: 4px;
-}
-
-.inputfield:focus,
-.inputfield:focus-visible {
-    outline: none;
-}
-
-.inputfield::placeholder {
-    color: var(--gray2-color);
-}
-
 .recharges__filters {
     display: flex;
     align-items: center;

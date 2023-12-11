@@ -1,13 +1,17 @@
+@import "./styles/utils.css";
 @import "./styles/typography.css";
 @import "./styles/mainPage.css";
 @import "./styles/rechargesPage.css";
+@import "./styles/errorPage.css";
 
 :root {
+    --white-color: #fff;
     --black-color: #151618;
     --gray1-color: #f4f5f6;
     --gray2-color: #929ba3;
     --green-color: #44b7a3;
     --orange-color: #eb6f25;
+    --red-color: #ce2c33;
 
     --family-font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
 
@@ -24,11 +28,8 @@
     border: 0;
 }
 
-.app {
-    padding: 32px 0;
-}
-
-.container {
+.wrapper {
     width: 90%;
+    padding: 32px 0;
     margin: 0 auto;
 }

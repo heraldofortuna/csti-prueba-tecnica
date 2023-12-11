@@ -1,12 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-    <div class="app">
-        <div class="container">
-            <Suspense>
-                <router-view></router-view>
-            </Suspense>
-        </div>
+    <div class="wrapper">
+        <router-view></router-view>
     </div>
 </template>
 
