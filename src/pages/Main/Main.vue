@@ -1,12 +1,14 @@
-<script setup lang="ts"></script>
+<script src="./Main.ts" />
 
 <template>
     <h1>Recargas y pagos</h1>
-    <span>Saldo virtual</span>
-    <span>S/ 150.00</span>
-    <p>¿Cómo cargar mi saldo virtual?</p>
-    <p>Código para cargar tu saldo: {12345678901}</p>
     <div>
+        <p>Saldo virtual</p>
+        <p>S/ {{ virtualBalance }}</p>
+        <p>¿Cómo cargar mi saldo virtual?</p>
+        <p>Código para cargar tu saldo: <span>{12345678901}</span></p>
+    </div>
+    <div @click="navigateToRecharges">
         <img />
         <span>Recargas</span>
     </div>

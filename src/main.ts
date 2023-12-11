@@ -1,5 +1,8 @@
 import { createSSRApp } from "vue";
+
 import App from "./App.vue";
+
+import router from "./router";
 
 export const createApp = () => {
     /**
@@ -7,6 +10,9 @@ export const createApp = () => {
      * and send it to the user to do hydration process
      */
     const app = createSSRApp(App);
+
+    app.use(router);
+
     return {
         app,
     };
