@@ -1,5 +1,6 @@
 import { defineComponent, onMounted, ref } from "vue";
 
+import Header from "../../components/Header.vue";
 import Card from "../../components/Card.vue";
 
 import router from "../../router.ts";
@@ -11,13 +12,14 @@ import { StatusPageType } from "../../types/types.ts";
 export default defineComponent({
     name: "Main",
     components: {
+        Header,
         Card,
     },
     setup: () => {
         const status = ref<StatusPageType>("loading");
         const virtualBalance = ref<string>("");
 
-        const fetchVirtualBalanceData = async () => {
+        const getVirtualBalanceData = async () => {
             try {
                 // Esperamos a que se recupere el saldo virtual antes de asignarlo al ref.
                 const retrievedVirtualBalance =
@@ -42,9 +44,15 @@ export default defineComponent({
             router.push("/recharges");
         };
 
+        const reloadGetVirtualBalanceData = async () => {
+            status.value = "loading";
+
+            await getVirtualBalanceData();
+        };
+
         onMounted(() => {
             // Llamamos a la función de carga de datos cuando el componente se monta
-            fetchVirtualBalanceData();
+            getVirtualBalanceData();
         });
 
         return {
@@ -54,6 +62,7 @@ export default defineComponent({
 
             //! Methods
             navigateToRecharges,
+            reloadGetVirtualBalanceData,
         };
     },
 });

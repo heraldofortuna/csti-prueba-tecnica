@@ -1,8 +1,6 @@
 /* Recharges Page */
 .rechargesPage {
     display: flex;
-    flex-direction: column;
-    gap: 16px;
 }
 
 .rechargesPage__filters {

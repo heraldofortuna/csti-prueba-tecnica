@@ -29,10 +29,12 @@
     margin: 0 0 8px 0;
 }
 
-.main__header__virtualBalance__value::after {
+.main__header__virtualBalance__reload::before {
     content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAyNCAyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICA8ZyBmaWxsPSJub25lIiBzdHJva2U9IiM0NGI3YTMiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj4NCiAgICAgICAgPHBhdGggZD0iTTE5LjkzMyAxMy4wNDFhOCA4IDAgMSAxLTkuOTI1LTguNzg4YzMuODk5LTEgNy45MzUgMS4wMDcgOS40MjUgNC43NDciLz4NCiAgICAgICAgPHBhdGggZD0iTTIwIDR2NWgtNSIvPg0KICAgIDwvZz4NCjwvc3ZnPg==");
+    display: grid;
+    place-items: center;
     width: 20px;
-    height: 20px;
+    height: 40px;
     cursor: pointer;
 }
 

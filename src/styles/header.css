@@ -1,0 +1,30 @@
+.header {
+    background-color: var(--black-color);
+}
+
+.header_container {
+    width: 90%;
+    height: 80px;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    margin: 0 auto;
+}
+
+.header_container h1 {
+    color: var(--white-color);
+    font-size: 32px;
+    font-weight: 400;
+    text-align: center;
+}
+
+.header_container .router-link-active {
+    text-align: left;
+    margin: 0;
+}
+
+.header_container .backButton::before {
+    content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAiIGhlaWdodD0iMzAiIHZpZXdCb3g9IjAgMCAxNCAxNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4NCiAgICA8cGF0aCBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgZD0iTTEzLjUgN0guNU00IDMuNUwuNSA3TDQgMTAuNSIvPg0KPC9zdmc+");
+    width: 30px;
+    height: 30px;
+}

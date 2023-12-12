@@ -1,5 +1,6 @@
 import { defineComponent, onMounted, ref } from "vue";
 
+import Header from "../../components/Header.vue";
 import InputField from "../../components/InputField.vue";
 import FilterOption from "../../components/FilterOption.vue";
 import ProviderCard from "../../components/ProviderCard.vue";
@@ -15,6 +16,7 @@ import { InitialProvidersData } from "../../utils/initialValues.ts";
 export default defineComponent({
     name: "Recharges",
     components: {
+        Header,
         InputField,
         FilterOption,
         ProviderCard,

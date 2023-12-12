@@ -5,6 +5,8 @@
 @import "./styles/rechargesPage.css";
 @import "./styles/errorPage.css";
 
+@import "./styles/header.css";
+
 @import "./styles/card.css";
 @import "./styles/providerCard.css";
 @import "./styles/inputField.css";
@@ -18,9 +20,7 @@
     --green-color: #44b7a3;
     --orange-color: #eb6f25;
     --red-color: #ce2c33;
-
     --family-font: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-
     --transition: 0.2s all ease;
 }
 
@@ -40,8 +40,16 @@
     outline: none;
 }
 
-.wrapper {
+.app {
+    background-color: var(--white-color);
+}
+
+.container {
     width: 90%;
+    max-width: 800px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
     padding: 32px 0;
     margin: 0 auto;
 }
