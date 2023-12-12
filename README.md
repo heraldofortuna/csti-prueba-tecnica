@@ -8,6 +8,10 @@
 
 > Screenshot - Recharges page
 
+![Project Image](./src/assets/screenshot3.png)
+
+> Screenshot - PWA Performance
+
 ---
 
 ## Table of Contents
@@ -60,7 +64,9 @@ to enter developer mode.
 
 Finally, open [http://localhost:3000](http://localhost:3000) to see it in your default browser.
 
-### API References
+---
+
+## References
 
 ```html
 https://aspexpressapi-production.up.railway.app/getActualBalance
@@ -68,16 +74,6 @@ https://aspexpressapi-production.up.railway.app/getActualBalance
 
 ```html
 https://aspexpressapi-production.up.railway.app/getProviders
-```
-
-[Go up](#prueba-técnica-frontend-csti)
-
----
-
-## References
-
-```html
-None
 ```
 
 [Go up](#prueba-técnica-frontend-csti)
