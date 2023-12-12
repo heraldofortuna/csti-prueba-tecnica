@@ -5,6 +5,7 @@
 
 .header_container {
     width: 90%;
+    max-width: 800px;
     height: 100px;
     display: grid;
     grid-template-columns: 1fr 4fr 1fr;
