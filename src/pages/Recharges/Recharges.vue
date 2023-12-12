@@ -7,7 +7,9 @@
         </router-link>
         <div class="recharges__finder">
             <p class="small_text">Buscar empresa</p>
-            <input class="inputfield" placeholder="ej. Culqi" />
+            <div class="inputfield">
+                <input placeholder="ej. Culqi" />
+            </div>
         </div>
         <div class="recharges__filters">
             <span class="recharges__filter">Todas</span>

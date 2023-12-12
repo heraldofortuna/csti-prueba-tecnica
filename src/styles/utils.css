@@ -14,6 +14,9 @@
 
 .backButton {
     width: fit-content;
+    display: flex;
+    align-items: center;
+    gap: 8px;
     cursor: pointer;
     transition: var(--transition);
 }
@@ -22,22 +25,43 @@
     opacity: 0.7;
 }
 
+.backButton::before {
+    content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZmlsbD0iIzE1MTYxOCIgZD0iTTIyNCA0ODBoNjQwYTMyIDMyIDAgMSAxIDAgNjRIMjI0YTMyIDMyIDAgMCAxIDAtNjQiLz4NCiAgICA8cGF0aCBmaWxsPSIjMTUxNjE4IiBkPSJtMjM3LjI0OCA1MTJsMjY1LjQwOCAyNjUuMzQ0YTMyIDMyIDAgMCAxLTQ1LjMxMiA0NS4zMTJsLTI4OC0yODhhMzIgMzIgMCAwIDEgMC00NS4zMTJsMjg4LTI4OGEzMiAzMiAwIDEgMSA0NS4zMTIgNDUuMzEyeiIvPg0KPC9zdmc+");
+    width: 20px;
+    height: 20px;
+}
+
 .inputfield {
+    width: 100%;
+    background-color: var(--gray1-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 16px;
+    border-radius: 4px;
+}
+
+.inputfield input {
+    width: 100%;
     background-color: var(--gray1-color);
     color: var(--black-color);
     font-size: 18px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 16px 16px;
-    border-radius: 4px;
 }
 
-.inputfield:focus,
-.inputfield:focus-visible {
+.inputfield input:focus,
+.inputfield input:focus-visible {
     outline: none;
 }
 
 .inputfield::placeholder {
     color: var(--gray2-color);
+}
+
+.inputfield::after {
+    content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZmlsbD0iI2ViNmYyNSIgZD0ibTc5NS45MDQgNzUwLjcybDEyNC45OTIgMTI0LjkyOGEzMiAzMiAwIDAgMS00NS4yNDggNDUuMjQ4TDc1MC42NTYgNzk1LjkwNGE0MTYgNDE2IDAgMSAxIDQ1LjI0OC00NS4yNDh6TTQ4MCA4MzJhMzUyIDM1MiAwIDEgMCAwLTcwNGEzNTIgMzUyIDAgMCAwIDAgNzA0Ii8+DQo8L3N2Zz4=");
+    width: 20px;
+    height: 20px;
 }
