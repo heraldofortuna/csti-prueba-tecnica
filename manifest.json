@@ -1,0 +1,14 @@
+{
+    "name": "Culqi PWA Test",
+    "short_name": "Culqi",
+    "description": "Una aplicación web progresiva construida con Vite y Vue para Culqi",
+    "theme_color": "#fff",
+    "icons": [
+        {
+            "src": "/icon.png",
+            "sizes": "144x144",
+            "type": "image/png",
+            "purpose": "any"
+        }
+    ]
+}
