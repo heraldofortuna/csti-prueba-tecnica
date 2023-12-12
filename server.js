@@ -1,6 +1,7 @@
 import fs from "fs";
 import path from "path";
 import express from "express";
+import https from "https";
 import { fileURLToPath } from "url";
 import { createServer as createViteServer } from "vite";
 
@@ -66,8 +67,18 @@ async function createServer() {
         res.status(500).send("Something went wrong!");
     });
 
-    // 14. Iniciar el servidor
-    app.listen(3000);
+    // 14. Iniciar el servidor HTTPS
+    const server = https.createServer(
+        {
+            key: fs.readFileSync("path/to/your/private-key.pem"),
+            cert: fs.readFileSync("path/to/your/certificate.pem"),
+        },
+        app
+    );
+
+    server.listen(3000, () => {
+        console.log("Server running on https://localhost:3000");
+    });
 }
 
 createServer();
