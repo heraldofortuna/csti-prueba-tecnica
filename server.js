@@ -63,7 +63,7 @@ async function createServer() {
         }
     });
 
-    app.listen(5173);
+    app.listen(3000);
 }
 
 createServer();

@@ -1,5 +1,5 @@
 export interface IProviderData {
-    company: string;
     _id: string;
+    company: string;
     image: string;
 }

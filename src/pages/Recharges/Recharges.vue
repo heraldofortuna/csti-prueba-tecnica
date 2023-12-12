@@ -5,7 +5,12 @@
         <router-link to="/">
             <span class="small_text backButton">Atrás</span>
         </router-link>
-        <InputField label="Buscar empresa" placeholder="ej. Culqi" />
+        <InputField
+            label="Buscar empresa"
+            :value="inputValue"
+            placeholder="ej. Culqi"
+            @update:value="handleInputValue"
+        />
         <div class="rechargesPage__filters">
             <FilterOption text="Todas" />
             <FilterOption text="Favoritas" />
@@ -15,10 +20,11 @@
             <span>Loading</span>
         </template>
         <template v-else>
+            <p>{{ inputValue }}</p>
             <ul class="rechargesPage__providers">
                 <li
                     class="rechargesPage__provider"
-                    v-for="(provider, index) in providers"
+                    v-for="(provider, index) in filteredProviders"
                 >
                     <ProviderCard
                         :image="provider?.image"

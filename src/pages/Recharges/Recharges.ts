@@ -9,6 +9,8 @@ import getProvidersService from "../../services/getProvidersService";
 import { IProviderData } from "../../types/interfaces.ts";
 import { StatusPageType } from "../../types/types.ts";
 
+import firstStringHasSecondString from "../../utils/firstStringHasSecondString.ts";
+
 export default defineComponent({
     name: "Recharges",
     components: {
@@ -19,6 +21,8 @@ export default defineComponent({
     setup: () => {
         const status = ref<StatusPageType>("loading");
         const providers = ref<IProviderData[]>([]);
+        const filteredProviders = ref<IProviderData[]>([]);
+        const inputValue = ref<string>("");
 
         // Esperamos a que se recupere el saldo virtual antes de asignarlo al ref.
         const fetchProvidersData = async () => {
@@ -28,6 +32,8 @@ export default defineComponent({
 
                 if (retrievedProviders) {
                     providers.value = retrievedProviders;
+                    filteredProviders.value = retrievedProviders;
+
                     status.value = "success";
                 } else {
                     status.value = "error";
@@ -39,6 +45,22 @@ export default defineComponent({
             }
         };
 
+        const handleInputValue = (newValue: string) => {
+            inputValue.value = newValue;
+
+            handleFilterProviders(newValue);
+        };
+
+        const handleFilterProviders = (currentInputValue: string) => {
+            filteredProviders.value = providers.value?.filter(
+                (provider: IProviderData) =>
+                    firstStringHasSecondString(
+                        provider?.company,
+                        currentInputValue
+                    )
+            );
+        };
+
         onMounted(() => {
             // Llamamos a la función de carga de datos cuando el componente se monta
             fetchProvidersData();
@@ -48,8 +70,12 @@ export default defineComponent({
             //! Properties
             status,
             providers,
+            filteredProviders,
+            inputValue,
 
             //! Methods
+            handleInputValue,
+            handleFilterProviders,
         };
     },
 });
