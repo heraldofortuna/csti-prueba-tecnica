@@ -1,5 +1,7 @@
 import { defineComponent, onMounted, ref } from "vue";
 
+import Card from "../../components/Card.vue";
+
 import router from "../../router.ts";
 
 import getVirtualBalanceService from "../../services/getVirtualBalanceService";
@@ -8,7 +10,9 @@ import { StatusPageType } from "../../types/types.ts";
 
 export default defineComponent({
     name: "Main",
-    components: {},
+    components: {
+        Card,
+    },
     setup: () => {
         const status = ref<StatusPageType>("loading");
         const virtualBalance = ref<string>("");

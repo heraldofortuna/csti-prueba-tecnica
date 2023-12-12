@@ -1,0 +1,10 @@
+.providerCard__content {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.providerCard__image {
+    width: 40px;
+    height: 40px;
+}

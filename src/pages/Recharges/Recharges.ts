@@ -1,5 +1,9 @@
 import { defineComponent, onMounted, ref } from "vue";
 
+import InputField from "../../components/InputField.vue";
+import FilterOption from "../../components/FilterOption.vue";
+import ProviderCard from "../../components/ProviderCard.vue";
+
 import getProvidersService from "../../services/getProvidersService";
 
 import { IProviderData } from "../../types/interfaces.ts";
@@ -7,7 +11,11 @@ import { StatusPageType } from "../../types/types.ts";
 
 export default defineComponent({
     name: "Recharges",
-    components: {},
+    components: {
+        InputField,
+        FilterOption,
+        ProviderCard,
+    },
     setup: () => {
         const status = ref<StatusPageType>("loading");
         const providers = ref<IProviderData[]>([]);

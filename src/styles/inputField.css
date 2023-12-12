@@ -1,0 +1,40 @@
+.inputField {
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+
+.inputField__input {
+    width: 100%;
+    background-color: var(--gray1-color);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 16px 16px;
+    border-radius: 4px;
+}
+
+.inputField__input input {
+    width: 100%;
+    background-color: var(--gray1-color);
+    color: var(--black-color);
+    font-size: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.inputField__input input:focus,
+.inputField__input input:focus-visible {
+    outline: none;
+}
+
+.inputField__input::placeholder {
+    color: var(--gray2-color);
+}
+
+.inputField__input::after {
+    content: url("data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAiIGhlaWdodD0iMjAiIHZpZXdCb3g9IjAgMCAxMDI0IDEwMjQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+DQogICAgPHBhdGggZmlsbD0iI2ViNmYyNSIgZD0ibTc5NS45MDQgNzUwLjcybDEyNC45OTIgMTI0LjkyOGEzMiAzMiAwIDAgMS00NS4yNDggNDUuMjQ4TDc1MC42NTYgNzk1LjkwNGE0MTYgNDE2IDAgMSAxIDQ1LjI0OC00NS4yNDh6TTQ4MCA4MzJhMzUyIDM1MiAwIDEgMCAwLTcwNGEzNTIgMzUyIDAgMCAwIDAgNzA0Ii8+DQo8L3N2Zz4=");
+    width: 20px;
+    height: 20px;
+}

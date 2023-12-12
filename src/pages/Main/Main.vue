@@ -7,15 +7,12 @@
                 <p class="small_text">Saldo virtual</p>
             </div>
             <div class="main__header__virtualBalance__value">
-                <p class="big_text">
-                    S/
-                    <template v-if="status === 'loading'">
-                        <span>Loading</span>
-                    </template>
-                    <template v-else>
-                        {{ virtualBalance }}
-                    </template>
-                </p>
+                <template v-if="status === 'loading'">
+                    <p class="big_text">Loading ...</p>
+                </template>
+                <template v-else>
+                    <p class="big_text">S/{{ virtualBalance }}</p>
+                </template>
             </div>
             <div class="main__header__question">
                 <span>¿Cómo cargar mi saldo virtual?</span>
@@ -26,21 +23,13 @@
         </div>
         <div class="main__list">
             <router-link to="/recharges">
-                <div class="main__list__element">
-                    <div class="main__list__element__icon"></div>
-                    <span class="medium_text">Recargas</span>
-                </div>
+                <Card type="recharges" text="Recargas" />
             </router-link>
-            <div class="main__list__element">
-                <div class="main__list__element__icon"></div>
-                <span class="medium_text">Pago de servicios</span>
-            </div>
-            <div class="main__list__element">
-                <div class="main__list__element__icon"></div>
-                <span class="medium_text"
-                    >Historial de ganancias y operaciones</span
-                >
-            </div>
+            <Card type="services" text="Pago de servicios" />
+            <Card
+                type="profitsAndOperations"
+                text="Historial de ganancias y operaciones"
+            />
         </div>
     </div>
 </template>

@@ -1,8 +1,14 @@
 @import "./styles/utils.css";
 @import "./styles/typography.css";
+
 @import "./styles/mainPage.css";
 @import "./styles/rechargesPage.css";
 @import "./styles/errorPage.css";
+
+@import "./styles/card.css";
+@import "./styles/providerCard.css";
+@import "./styles/inputField.css";
+@import "./styles/filterOption.css";
 
 :root {
     --white-color: #fff;
