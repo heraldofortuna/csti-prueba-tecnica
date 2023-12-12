@@ -55,7 +55,6 @@ async function createServer() {
 
     // 12. Manejar otras rutas aquí según tus necesidades
     app.get("/recharges", (req, res) => {
-        console.log("recharges:", req, res);
         res.send("Hola desde /recharges!");
     });
 

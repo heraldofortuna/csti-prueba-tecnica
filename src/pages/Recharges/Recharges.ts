@@ -5,6 +5,8 @@ import InputField from "../../components/InputField.vue";
 import FilterOption from "../../components/FilterOption.vue";
 import ProviderCard from "../../components/ProviderCard.vue";
 
+import router from "../../router.ts";
+
 import getProvidersService from "../../services/getProvidersService";
 
 import { IProviderData } from "../../types/interfaces.ts";
@@ -22,6 +24,7 @@ export default defineComponent({
         ProviderCard,
     },
     setup: () => {
+        const token = ref<string | null>(null);
         const status = ref<StatusPageType>("loading");
         const providers = ref<IProviderData[]>(InitialProvidersData);
         const currentProviders = ref<IProviderData[]>(InitialProvidersData);
@@ -30,32 +33,46 @@ export default defineComponent({
 
         // Esperamos a que se recupere el saldo virtual antes de asignarlo al ref.
         const fetchProvidersData = async () => {
-            try {
-                // Llamada asincrónica a getProvidersService
-                const retrievedProviders = await getProvidersService();
-
-                if (retrievedProviders) {
-                    const newProviders = retrievedProviders?.map(
-                        (provider: IProviderData) => {
-                            return {
-                                ...provider,
-                                isFavorite: false,
-                            };
-                        }
+            if (token.value) {
+                try {
+                    // Llamada asincrónica a getProvidersService
+                    const retrievedProviders = await getProvidersService(
+                        token.value
                     );
 
-                    providers.value = newProviders;
-                    currentProviders.value = newProviders;
+                    if (retrievedProviders) {
+                        const newProviders = retrievedProviders?.map(
+                            (provider: IProviderData) => {
+                                return {
+                                    ...provider,
+                                    isFavorite: false,
+                                };
+                            }
+                        );
 
-                    status.value = "success";
-                } else {
-                    status.value = "error";
+                        providers.value = newProviders;
+                        currentProviders.value = newProviders;
+
+                        status.value = "success";
+                    } else {
+                        navigateToError();
+                    }
+                } catch (error) {
+                    console.error(
+                        "Error al recuperar el saldo virtual:",
+                        error
+                    );
+
+                    navigateToError();
                 }
-            } catch (error) {
-                console.error("Error al recuperar el saldo virtual:", error);
-
-                status.value = "error";
+            } else {
+                navigateToError();
             }
+        };
+
+        const navigateToError = () => {
+            status.value = "error";
+            router.push("/error");
         };
 
         const handleInputValue = (newValue: string) => {
@@ -118,6 +135,10 @@ export default defineComponent({
         };
 
         onMounted(() => {
+            const currentToken = localStorage.getItem("token");
+
+            token.value = currentToken;
+
             // Llamamos a la función de carga de datos cuando el componente se monta
             fetchProvidersData();
         });

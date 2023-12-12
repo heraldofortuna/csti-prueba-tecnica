@@ -16,32 +16,43 @@ export default defineComponent({
         Card,
     },
     setup: () => {
+        const token = ref<string | null>(null);
         const status = ref<StatusPageType>("loading");
         const virtualBalance = ref<string>("");
 
         const getVirtualBalanceData = async () => {
-            try {
-                // Esperamos a que se recupere el saldo virtual antes de asignarlo al ref.
-                const retrievedVirtualBalance =
-                    await getVirtualBalanceService();
+            if (token.value) {
+                try {
+                    // Esperamos a que se recupere el saldo virtual antes de asignarlo al ref.
+                    const retrievedVirtualBalance =
+                        await getVirtualBalanceService(token.value);
 
-                if (retrievedVirtualBalance) {
-                    virtualBalance.value = retrievedVirtualBalance;
-                    status.value = "success";
-                } else {
-                    status.value = "error";
-                    router.push("/error");
+                    if (retrievedVirtualBalance) {
+                        virtualBalance.value = retrievedVirtualBalance;
+                        status.value = "success";
+                    } else {
+                        navigateToError();
+                    }
+                } catch (error) {
+                    console.error(
+                        "Error al recuperar el saldo virtual:",
+                        error
+                    );
+
+                    navigateToError();
                 }
-            } catch (error) {
-                console.error("Error al recuperar el saldo virtual:", error);
-
-                status.value = "error";
-                router.push("/error");
+            } else {
+                navigateToError();
             }
         };
 
         const navigateToRecharges = () => {
             router.push("/recharges");
+        };
+
+        const navigateToError = () => {
+            status.value = "error";
+            router.push("/error");
         };
 
         const reloadGetVirtualBalanceData = async () => {
@@ -51,6 +62,10 @@ export default defineComponent({
         };
 
         onMounted(() => {
+            const currentToken = localStorage.getItem("token");
+
+            token.value = currentToken;
+
             // Llamamos a la función de carga de datos cuando el componente se monta
             getVirtualBalanceData();
         });

@@ -1,10 +1,7 @@
 import axios from "axios";
 
-const getProvidersService = async () => {
-    const token =
-        "eyJhbGciOiJIUzI1NiJ9.eyJ1c2VybmFtZSI6Indpbmdlcmxpb24uY3VscWkiLCJleHAiOjE3MDY5NDIxNjR9.j7_UICJFBvPiHv_bhnoRNprVU_DaML41Vjmd51jcRDI";
-
-    const baseUrl = "https://aspexpressapi-production.up.railway.app";
+const getProvidersService = async (token: string) => {
+    const baseUrl = import.meta.env.VITE_API_URL_BASE_SERVICE;
 
     const response = await axios
         .get(`${baseUrl}/getProviders`, {
