@@ -12,6 +12,12 @@
             "sizes": "48x48 72x72 96x96 144x144 192x192 256x256 384x384 512x512",
             "type": "image/png",
             "purpose": "any"
+        },
+        {
+            "src": "/icon.png",
+            "sizes": "48x48 72x72 96x96 144x144 192x192 256x256 384x384 512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
         }
     ]
 }
