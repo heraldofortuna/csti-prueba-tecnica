@@ -35,6 +35,11 @@
     box-sizing: border-box;
 }
 
+*:focus,
+*:focus-visible {
+    outline: none;
+}
+
 .wrapper {
     width: 90%;
     padding: 32px 0;

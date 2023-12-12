@@ -12,25 +12,43 @@
             @update:value="handleInputValue"
         />
         <div class="rechargesPage__filters">
-            <FilterOption text="Todas" />
-            <FilterOption text="Favoritas" />
-            <FilterOption text="Telefonía" />
+            <FilterOption
+                name="all"
+                text="Todas"
+                :disabled="false"
+                :selected="filterValue === 'all'"
+                @click="handleFilterProvidersByType"
+            />
+            <FilterOption
+                name="favorites"
+                text="Favoritas"
+                :disabled="false"
+                :selected="filterValue === 'favorites'"
+                @click="handleFilterProvidersByType"
+            />
+            <FilterOption
+                name="telephony"
+                text="Telefonía"
+                :disabled="true"
+                :selected="filterValue === 'telephony'"
+                @click="handleFilterProvidersByType"
+            />
         </div>
         <template v-if="status === 'loading'">
             <span>Loading</span>
         </template>
         <template v-else>
-            <p>{{ inputValue }}</p>
             <ul class="rechargesPage__providers">
                 <li
                     class="rechargesPage__provider"
-                    v-for="(provider, index) in filteredProviders"
+                    v-for="(provider, index) in currentProviders"
                 >
                     <ProviderCard
                         :image="provider?.image"
                         :provider="provider?.company"
+                        :isFavorite="provider?.isFavorite"
+                        @click="handleMakeFavoriteProviders"
                     />
-                    <img class="rechargesPage__provider__icon" />
                 </li>
             </ul>
         </template>

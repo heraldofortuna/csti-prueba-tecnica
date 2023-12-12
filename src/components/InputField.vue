@@ -8,7 +8,7 @@ const { label, value, placeholder } = defineProps([
 const emit = defineEmits();
 
 const onInput = (event: Event) => {
-    emit("update:value", (event.target as HTMLInputElement).value);
+    emit("update:value", (event?.target as HTMLInputElement)?.value);
 };
 </script>
 

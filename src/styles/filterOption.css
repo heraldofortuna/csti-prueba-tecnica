@@ -31,3 +31,17 @@
     width: 16px;
     height: 21px;
 }
+
+.filterOption--disabled {
+    opacity: 0.5;
+    cursor: auto;
+    pointer-events: none;
+}
+
+.filterOption--disabled:hover {
+    border-color: var(--gray1-color);
+}
+
+.filterOption--selected {
+    border-color: var(--orange-color);
+}
